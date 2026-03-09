@@ -16,11 +16,15 @@ export default function Sidebar() {
 
   const menu = [
     { name: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
-    { name: "Academics", icon: GraduationCap, path: "/academics/classes" },
-    { name: "Students", icon: Users, path: "/students" },
-    { name: "Teachers", icon: UserCog, path: "/teachers" },
-    { name: "Attendance", icon: CalendarCheck, path: "/attendance" },
-    { name: "Fees", icon: CreditCard, path: "/fees" },
+    //{ name: "Academics", icon: GraduationCap, path: "/academics/classes" },
+    { name: "Classes", icon: GraduationCap, path: "/dashboard/academics/classes" },
+    { name: "Sections", icon: GraduationCap, path: "/dashboard/academics/sections" },
+    { name: "Subjects", icon: GraduationCap, path: "/dashboard/academics/subjects" },
+    { name: "Routine", icon: GraduationCap, path: "/dashboard/academics/routine" },
+    { name: "Students", icon: Users, path: "/dashboard/students" },
+    { name: "Teachers", icon: UserCog, path: "/dashboard/teachers" },
+    { name: "Attendance", icon: CalendarCheck, path: "/dashboard/attendance" },
+    { name: "Fees", icon: CreditCard, path: "/dashboard/fees" },
   ];
 
   return (
