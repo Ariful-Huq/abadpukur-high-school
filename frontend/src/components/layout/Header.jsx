@@ -1,15 +1,17 @@
-function Header() {
+export default function Header() {
   return (
-    <div
-      style={{
-        background: "#f3f4f6",
-        padding: "15px",
-        borderBottom: "1px solid #ddd",
-      }}
-    >
-      Admin Dashboard
-    </div>
+    <header className="h-16 bg-white border-b flex items-center justify-between px-6">
+      <h1 className="text-xl font-semibold text-gray-700">
+        Dashboard
+      </h1>
+
+      <div className="flex items-center gap-4">
+        <span className="text-sm text-gray-600">
+          Admin
+        </span>
+
+        <div className="w-8 h-8 rounded-full bg-gray-300" />
+      </div>
+    </header>
   );
 }
-
-export default Header;

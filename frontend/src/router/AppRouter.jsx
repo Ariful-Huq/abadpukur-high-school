@@ -1,27 +1,24 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Login from "../auth/Login";
-import ProtectedRoute from "../auth/ProtectedRoute";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "../components/layout/DashboardLayout";
 
-import DashboardHome from "../modules/academics/ClassList"; // example default page
+function DashboardHome() {
+  return <div className="text-2xl">Dashboard Home</div>;
+}
 
-const AppRouter = () => {
+export default function AppRouter() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route
-        path="/dashboard/*"
-        element={
-          <ProtectedRoute>
-            <DashboardLayout>
-              <DashboardHome />
-            </DashboardLayout>
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
-  );
-};
+    <BrowserRouter>
+      <Routes>
 
-export default AppRouter;
+        {/* redirect root */}
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+        {/* dashboard */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardHome />} />
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
+  );
+}
